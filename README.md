@@ -1,49 +1,126 @@
-# A3i-Accel Frontend v2
+# A3i-Accel Frontend
 
-Assignment project to research, design, and build a clearer A3i-Accel website with an Ask A3i concierge and demo lead capture.
+A responsive marketing frontend for A3i-Accel, built with Next.js, React and TypeScript. It presents AI products, explains Apps / Ants / Agents, and lets visitors explore example workflows and request a demo.
 
-## Status
-The public frontend is implemented using Next.js, TypeScript, and Tailwind, including the approved hero and navigation, homepage portfolio, workflow examples, accelerator browsing, footer, and 56 original public content pages. Existing chat and demo-request integrations are preserved. Original-site applications and imported forms remain explicitly marked previews where their scripts/backend are not connected.
+## Features
 
-Run `npm install`, then `npm run dev` to preview locally. Use `npm run build` for the production build and `npm run typecheck` for TypeScript checks.
+- Scenic homepage hero with product and demo calls to action.
+- Responsive navigation with product, industry and company dropdowns.
+- Six-product showcase with sticky illustrations.
+- Animated Why A3i section with a task-to-output diagram.
+- Nine interactive workflow examples and a filterable accelerator carousel.
+- Apps / Ants / Agents overview and closing demo section.
+- Glass-effect login preview with password visibility control.
+- Chat widget and demo-request form connected through server-side API proxies.
+- Imported product, company, industry and resource content pages.
+- Keyboard focus styles and support for reduced-motion preferences.
 
-Product photography is sourced from the official website and saved under `public/images/products/`. The supplied logo is stored at `public/logo.png`.
+## Technology
 
-## Project guide
-- [Product requirements](docs/PRD.md): purpose, users, scope, and success criteria.
-- [Architecture](docs/ARCHITECTURE.md): planned stack, module boundaries, and request flow.
-- [Design](docs/DESIGN.md): visual direction, page narrative, accessibility, and motion.
-- [Rules](docs/RULES.md): implementation and content working agreements.
-- [Memory](docs/MEMORY.md): current state, references, and open decisions.
-- [Tasks](TASKS.md): project checklist and remaining milestones.
+| Area | Tools |
+| --- | --- |
+| Framework | Next.js App Router, React |
+| Language | TypeScript |
+| Styling | Tailwind CSS, global styles and CSS Modules |
+| Motion | Motion, GSAP |
+| UI utilities | Lucide icons, Swiper, Tippy.js, Lottie |
+| Optional backend | Separate Python / FastAPI service |
 
-## Planned folders
-`src/` contains React components, shared content, local page routes, imported public page snapshots, and API proxies. Unimplemented reserved App Router files retain `.placeholder` suffixes. The imported frontend verification is available through `node scripts/verify-frontend.mjs`; existing backend-related tests are separate.
+## Run locally
 
-## Setup
-Requires Node.js 20.9 or newer. No environment variables are needed for the navigation preview. Backend services and deployment remain unconfigured.
-## a31-assistance integration
+Use Node.js **20.9 or newer** and npm.
 
-Run the FastAPI backend from the Chatbot folder, then run `npm run dev` here.
-`A3I_API_URL` is a server-only setting and defaults to http://127.0.0.1:8000.
-The chat widget uses `/api/chat` to proxy the streaming Python endpoint.
-It keeps the session ID in sessionStorage, shows loading and retry controls, and
-retains the conversation when the panel is closed. New chat clears the session.
+```bash
+git clone https://github.com/shourya845/A3i_frontend.git
+cd A3i_frontend
+npm ci
+npm run dev
+```
 
-`/demo` posts confirmed name/company/need fields through `/api/leads` to SQLite
-in the Python project. Submissions reuse an ID on retries to avoid duplicate leads.
-No email is sent and this does not book a calendar appointment.
+Open [localhost:3000](http://localhost:3000). Press **Ctrl + C** in the terminal to stop the server.
 
-Checks: `npm run typecheck` and `npm run build`.
+### Production preview
 
-## Public frontend expansion
-The homepage now includes the portfolio, Why A3i, nine interactive workflow examples, accelerator browsing, final demo CTA, and footer. Fifty-six original public content pages are available through local product, company, industry, resource, and workflow routes. Existing chat and demo API integrations are preserved.
+```bash
+npm run build
+npm run start
+```
 
-Imported HTML/CSS is sanitised and scoped; original site scripts are not executed. Imported forms and unimplemented live tools show explicit preview limits. Read [frontend import details](docs/FRONTEND_IMPORT.md) for source handling and verification coverage. Run `node scripts/verify-frontend.mjs` to check imported routes, links, and assets.
+### Checks
 
-### Assistant unavailable locally
-The frontend and Python chat service must both be running. If the widget says the assistant is unavailable, open a terminal in the sibling Chatbot folder and run:
+```bash
+npm run typecheck
+node scripts/verify-frontend.mjs
+npm run build
+```
 
-    .\.venv\Scripts\python.exe -m uvicorn main:app --host 127.0.0.1 --port 8000
+The frontend verification script checks imported routes, local assets, links and workflow data. It does not verify live backend services.
 
-Keep that terminal running alongside the frontend. Ollama must also be running; factual website answers require the backend's configured Tavily account. After a backend restart, use New chat if an old conversation has expired.
+## Environment configuration
+
+The frontend can be explored without configuring a backend. To enable integrations, copy `.env.example` to `.env.local`:
+
+```bash
+cp .env.example .env.local
+```
+
+On Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env.local
+```
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `A3I_API_URL` | Server-side URL of the separate assistant backend | `http://127.0.0.1:8000` |
+| `A3I_ENABLE_MARKETING_INTEGRATIONS` | Enables optional configured marketing embeds | `false` |
+
+See [.env.example](.env.example) for the optional service settings. Keep private credentials out of browser code and Git.
+
+## Backend and current limitations
+
+The Python backend is a separate project and is **not included in this repository**.
+
+- **Chat:** `/api/chat` forwards messages to the backend's streaming chat endpoint. The backend and its model/search services must be available for replies.
+- **Demo requests:** `/api/leads` forwards confirmed contact details to the backend. A saved request is not a calendar booking, and the frontend does not send an email.
+- **Login:** the glass login screen is a frontend preview. It does not authenticate users or transmit/store passwords. Social sign-in is disabled, and password recovery is not connected.
+- **Imported pages:** original site scripts are not executed. Imported forms and live tools may require their own backend integrations.
+- **Marketing services:** optional embeds remain disabled until account settings are supplied.
+
+## Project structure
+
+```text
+src/
+  app/                  Pages, API routes and shared styles
+    api/chat/           Chat proxy
+    api/leads/          Demo-request proxy
+    login/              Glass login preview
+    products/[slug]/    Product pages
+  components/
+    chat/               Assistant interface
+    forms/              Demo-request form
+    home/               Homepage sections and illustrations
+    layout/             Header, footer and navigation
+    products/           Imported content rendering
+    ui/                 Shared UI elements
+  content/              Product and navigation data
+  hooks/                Shared React hooks
+  lib/                  Frontend and server utilities
+  types/                Shared TypeScript types
+public/                 Images, logo and local assets
+scripts/                Import and verification utilities
+tests/                  Existing project checks
+docs/                   Architecture, design and evaluation notes
+```
+
+## Documentation
+
+- [Product requirements](docs/PRD.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Design direction](docs/DESIGN.md)
+- [Frontend import details](docs/FRONTEND_IMPORT.md)
+- [Third-party notices](THIRD_PARTY_NOTICES.md)
+
+## Assets and attribution
+
+A3i branding and supplied website assets belong to their respective owners. Third-party code and references are documented in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md). This repository does not grant additional rights to those assets.
