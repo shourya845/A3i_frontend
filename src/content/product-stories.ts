@@ -1,4 +1,5 @@
-// Names and outcomes come from the supplied company graphic.
+// Names/outcomes: supplied company graphic and a3i-accel.com, checked 2026-10-20.
+// Assignment naming differences and missing kickoff content: docs/content-compliance.md.
 // Preview rows illustrate that copy; they are not live product screenshots.
 export const productStories = [
   {

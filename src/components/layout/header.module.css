@@ -1,5 +1,5 @@
 .header {
-  --nav-surface: #084d80;
+  --nav-surface: #102c4d;
   padding: 12px 24px;
   background: var(--navy);
   color: #fff;
@@ -50,7 +50,7 @@
 
 .header :global(.nav-link:is(:focus-visible, .is-open)) {
   color: #fff;
-  background: #21638f;
+  background: #1d3c5c;
 }
 
 .header :global(.desktop-actions) {
@@ -100,7 +100,7 @@
   .header :global(.responsible:hover),
   .header :global(.login:hover) {
     color: #fff;
-    background: #21638f;
+    background: #1d3c5c;
   }
   .header :global(.start-button:hover) { background: #fff; }
 }
@@ -124,7 +124,7 @@
   }
   .header :global(.menu-toggle) {
     color: #fff;
-    background: #21638f;
+    background: #1d3c5c;
     border: 0;
   }
   .header :global(.mobile-panel) {

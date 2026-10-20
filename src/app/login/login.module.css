@@ -7,7 +7,7 @@
   isolation: isolate;
   overflow: hidden;
   color: #fff;
-  background: radial-gradient(ellipse at 80% 20%, #137bd0 0%, transparent 48%), linear-gradient(135deg, #03477f, #0065b9 60%, #034b87);
+  background: radial-gradient(ellipse at 80% 20%, #173b60 0%, transparent 48%), linear-gradient(135deg, #020a12, #0b223c 60%, #102c4d);
 }
 .page::before, .page::after {
   content: '';
@@ -15,24 +15,24 @@
   z-index: -1;
   width: 440px;
   height: 440px;
-  border: 64px solid #73caff55;
+  border: 64px solid #41608055;
   border-radius: 50%;
   transform: rotate(-30deg);
   box-shadow: 24px 32px 52px #001d4d55, inset 8px 12px 25px #b2e5ff44;
 }
 .page::before { left: calc(50% - 510px); bottom: -140px; }
-.page::after { right: calc(50% - 480px); top: -160px; border-color: #003c7666; }
+.page::after { right: calc(50% - 480px); top: -160px; border-color: #06152699; }
 .back { position: absolute; top: 28px; left: 32px; display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 14px; }
 .panel {
   width: min(100%, 420px);
   padding: 36px 40px 24px;
   border-radius: 24px;
   border: 1px solid #d1edff55;
-  background: #0a4b85d9;
+  background: #0b223ce8;
   box-shadow: 0 24px 64px #001d4d40, inset 0 1px #ffffff29;
   backdrop-filter: blur(20px);
 }
-@supports (backdrop-filter: blur(20px)) { .panel { background: #135b97a8; } }
+@supports (backdrop-filter: blur(20px)) { .panel { background: #102c4dbd; } }
 .brand { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 23px; font-weight: 700; text-decoration: none; margin-bottom: 32px; }
 .brand img { filter: invert(1); mix-blend-mode: screen; }
 .panel h1 { font: 700 28px/1.2 Arial, sans-serif; margin: 0 0 8px; }

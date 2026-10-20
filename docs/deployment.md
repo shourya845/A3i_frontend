@@ -2,6 +2,8 @@
 
 Status: instructions prepared; no site has been published by this document.
 
+Backend update, 20 October 2026: the user deployed the Python service at `https://a31-assistance.onrender.com`. Its OpenAPI schema exposes `/chat`, `/chat/stream` and `/leads`, and a direct streaming chat request returned HTTP 200 with NDJSON session, answer-delta and done events. Local `.env.local` now sets `A3I_API_URL` to this address and remains ignored by Git. Configure the same server-side variable in Netlify when deploying the frontend. This check does not establish production lead persistence, uptime or complete assistant accuracy. `/health` currently returns 404; do not select it as a Render health check without adding that endpoint separately.
+
 Official reference, reviewed 19 October 2026: https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/
 
 ## Frontend

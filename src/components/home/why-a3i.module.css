@@ -2,8 +2,7 @@
   background-color: #e8f0fa;
   background-image:
     url('/images/backgrounds/why-a3i-contours.svg'),
-    linear-gradient(90deg, #e8f0faf5 0%, #e8f0fad4 40%, #e8f0fa99 100%),
-    url('/reference/assets/band-why.webp');
+    linear-gradient(90deg, #e8f0fa 0%, #f3f6f9 100%);
   background-position: right top, center, center;
   background-size: min(48vw, 600px) auto, cover, cover;
   background-repeat: no-repeat;
@@ -23,20 +22,20 @@
   color: #354f6e;
 }
 .benefit:first-child {
-  background: #0b528c;
-  border-color: #246aa1;
+  background: #102c4d;
+  border-color: #254867;
   color: #fff;
 }
 .benefit:first-child .icon {
-  background: #2d70a3;
+  background: #254867;
   color: #fff;
 }
 .benefit:first-child .description {
   color: #e1effb;
 }
 .diagram {
-  background: #256596;
-  border-color: #5c8fb6;
+  background: #193b5c;
+  border-color: #54718e;
   color: #fff;
 }
 .model {
