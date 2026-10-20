@@ -6,3 +6,8 @@ out/
 *.tsbuildinfo
 
 .tmp/
+__pycache__/
+*.pyc
+output/homepage-concepts-2026-10-18/
+output/homepage-concepts-2026-10-18.zip
+output/assignment/A3i-assignment-review.pptx
