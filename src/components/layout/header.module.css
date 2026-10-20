@@ -48,9 +48,7 @@
   padding: 13px 12px;
 }
 
-.header :global(.nav-link:is(:hover, :focus-visible, .is-open)),
-.header :global(.responsible:hover),
-.header :global(.login:hover) {
+.header :global(.nav-link:is(:focus-visible, .is-open)) {
   color: #fff;
   background: #21638f;
 }
@@ -74,10 +72,6 @@
   padding: 14px 20px;
 }
 
-.header :global(.start-button:hover) {
-  background: #fff;
-}
-
 .header :global(a:focus-visible),
 .header :global(button:focus-visible) {
   outline: 2px solid #bce8ff;
@@ -92,8 +86,27 @@
   margin-top: 4px;
 }
 
-.header :global(.dropdown-panel button:focus-visible) {
+.header :global(.dropdown-panel button:focus-visible),
+.header :global(.mobile-section > div button:focus-visible) {
   outline-color: #084d80;
+}
+
+.header :global(.start-button) {
+  transition: background-color 180ms ease, transform 120ms var(--motion-ease);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header :global(.nav-link:hover),
+  .header :global(.responsible:hover),
+  .header :global(.login:hover) {
+    color: #fff;
+    background: #21638f;
+  }
+  .header :global(.start-button:hover) { background: #fff; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .header :global(.start-button:active) { transform: scale(0.98); }
 }
 
 @media (min-width: 1100px) and (max-width: 1190px) {

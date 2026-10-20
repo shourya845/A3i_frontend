@@ -141,3 +141,5 @@
 - [x] Add approved Apps/Ants/Agents heading mask, 28px staggered entrances, desktop photo zoom and hover lift with reduced-motion fallback; verify build, browser states, mobile and readable SSR.
 
 - [x] Navbar reference update: rounded white shell, dark A3i logo, soft menu states and navy CTA. Preserved menus and routes. Production build/TypeScript passed; browser checked 1440px, 1100px and 390px, product/industry/company dropdowns, Escape focus restoration and mobile overflow.
+
+- [x] Frontend interaction polish: touch-aware navbar hover, subtle CTA press feedback, accessible input/submenu focus and 16px demo fields. Build, route check and desktop/mobile browser verification passed.

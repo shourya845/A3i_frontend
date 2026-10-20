@@ -13,6 +13,7 @@ body {
 }
 button,a {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 button {
   font: inherit;
@@ -1176,6 +1177,7 @@ button,svg {
   font: inherit;
   background: white;
   color: var(--ink);
+  font-size: 16px;
 }
 .a31-demo-form textarea {
   resize: vertical;
@@ -1210,7 +1212,7 @@ button,svg {
   line-height: 1.6;
 }
 .a31-compose input:focus-visible,.a31-demo-form input:focus-visible,.a31-demo-form textarea:focus-visible {
-  outline: 3px solid var(--focus);
+  outline: 3px solid #315c85;
   outline-offset: 2px;
 }
 .hero-actions a {

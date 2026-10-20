@@ -1,0 +1,60 @@
+.page {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  padding: 88px 24px 40px;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+  background: radial-gradient(ellipse at 80% 20%, #137bd0 0%, transparent 48%), linear-gradient(135deg, #03477f, #0065b9 60%, #034b87);
+}
+.page::before, .page::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 440px;
+  height: 440px;
+  border: 64px solid #73caff55;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+  box-shadow: 24px 32px 52px #001d4d55, inset 8px 12px 25px #b2e5ff44;
+}
+.page::before { left: calc(50% - 510px); bottom: -140px; }
+.page::after { right: calc(50% - 480px); top: -160px; border-color: #003c7666; }
+.back { position: absolute; top: 28px; left: 32px; display: flex; align-items: center; gap: 8px; text-decoration: none; font-size: 14px; }
+.panel {
+  width: min(100%, 420px);
+  padding: 36px 40px 24px;
+  border-radius: 24px;
+  border: 1px solid #d1edff55;
+  background: #0a4b85d9;
+  box-shadow: 0 24px 64px #001d4d40, inset 0 1px #ffffff29;
+  backdrop-filter: blur(20px);
+}
+@supports (backdrop-filter: blur(20px)) { .panel { background: #135b97a8; } }
+.brand { display: flex; justify-content: center; align-items: center; gap: 10px; font-size: 23px; font-weight: 700; text-decoration: none; margin-bottom: 32px; }
+.brand img { filter: invert(1); mix-blend-mode: screen; }
+.panel h1 { font: 700 28px/1.2 Arial, sans-serif; margin: 0 0 8px; }
+.intro { margin: 0 0 24px; color: #e2f2ff; font-size: 14px; }
+.panel label { display: block; font-size: 14px; margin: 18px 0 8px; }
+.panel input { width: 100%; min-height: 46px; padding: 12px 14px; background: #fff; color: #0b223c; border: 1px solid #c6dced; border-radius: 7px; font-size: 16px; }
+.panel input::placeholder { color: #607386; }
+.password { position: relative; }
+.password input { padding-right: 48px; }
+.password button { position: absolute; right: 2px; top: 2px; width: 42px; height: 42px; display: grid; place-items: center; background: transparent; color: #315c85; border-radius: 5px; }
+.forgot { padding: 0; margin: 12px 0 24px; min-height: 24px; color: #fff; background: transparent; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; }
+.submit { width: 100%; min-height: 46px; background: #052e52; color: #fff; border-radius: 7px; font-weight: 600; transition: background 180ms ease; }
+.divider { display: flex; align-items: center; gap: 12px; margin: 24px 0 18px; font-size: 13px; }
+.divider::before, .divider::after { content: ''; height: 1px; flex: 1; background: #ffffff40; }
+.providers { display: flex; gap: 10px; }
+.providers button { flex: 1; min-width: 0; min-height: 40px; padding: 8px 4px; border-radius: 7px; background: #e1edf6; color: #435d72; font-size: 12px; cursor: not-allowed; }
+.register { text-align: center; font-size: 13px; margin: 22px 0; }
+.register a { font-weight: 700; text-underline-offset: 3px; }
+.availability { color: #e2f2ff; font-size: 12px; line-height: 1.6; margin: 0; }
+.notice { font-size: 13px; line-height: 1.5; margin: 10px 0 0; }
+.notice:empty { display: none; }
+.page :is(a, button, input):focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.panel input:focus-visible, .password button:focus-visible { outline-color: #082f53; outline-offset: 2px; }
+@media (hover: hover) and (pointer: fine) { .submit:hover { background: #001d38; } }
+@media (max-width: 480px) { .page { padding: 76px 16px 24px; } .panel { padding: 30px 26px 24px; } .back { top: 24px; left: 20px; } }
