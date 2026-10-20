@@ -26,10 +26,9 @@ export default function NextoryPage() {
   return <div className={styles.page}>
     <section className={styles.hero} aria-labelledby="nextory-title">
       <div className={styles.container}>
-        <nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/#products">Products</Link><span aria-hidden="true">/</span><span>NeXtory</span></nav>
+        <nav className={styles.breadcrumb} aria-label="Breadcrumb"><Link href="/">Home</Link><span aria-hidden="true">/</span><Link href="/#products">Products</Link><span aria-hidden="true">/</span><span>NeXtory · AI-Notes</span></nav>
         <div className={styles.heroGrid}>
           <div className={styles.heroCopy}>
-            <p className={styles.productName}><AudioLines size={20} aria-hidden="true" /> NeXtory <span>AI-Notes</span></p>
             <h1 id="nextory-title">Be in the meeting.<br />Leave with a plan.</h1>
             <p className={styles.lead}>Meeting notes, decisions and next steps, brought together. NeXtory helps your team keep the conversation in focus and the work moving afterward.</p>
             <div className={styles.actions}>
@@ -41,6 +40,13 @@ export default function NextoryPage() {
           </div>
           <NextoryReveal><NextoryVisual /></NextoryReveal>
         </div>
+      </div>
+    </section>
+
+    <section className={`${styles.section} ${styles.exampleSection}`} aria-labelledby="nextory-example-title">
+      <div className={`${styles.container} ${styles.exampleGrid}`}>
+        <NextoryReveal><h2 id="nextory-example-title">One place your<br />meetings land.</h2><p className={styles.exampleIntro}>Live meetings and uploaded recordings sit in the same history, with summaries, action items and full transcripts.</p><ul className={styles.checkList}><li>Seven write-up styles, including meeting minutes, class notes, brainstorms and interviews.</li><li>Ask A3i across meeting history, with date-aware questions such as what was decided in March.</li><li>Upload split recordings in order to combine the parts into one meeting.</li></ul><div className={styles.exampleKey}><FileText size={21} aria-hidden="true" /><span>One conversation.<br /><strong>Three ways to move forward.</strong></span></div><a className={styles.textLink} href="#nextory-sample-panel">Explore the example <ArrowRight size={18} aria-hidden="true" /></a></NextoryReveal>
+        <NextoryReveal><NextoryPreview /></NextoryReveal>
       </div>
     </section>
 
@@ -62,13 +68,6 @@ export default function NextoryPage() {
 
     <NextorySetup />
     <NextoryComparison />
-
-    <section className={`${styles.section} ${styles.exampleSection}`} aria-labelledby="nextory-example-title">
-      <div className={`${styles.container} ${styles.exampleGrid}`}>
-        <NextoryReveal><h2 id="nextory-example-title">One place your<br />meetings land.</h2><p className={styles.exampleIntro}>Live meetings and uploaded recordings sit in the same history, with summaries, action items and full transcripts.</p><ul className={styles.checkList}><li>Seven write-up styles, including meeting minutes, class notes, brainstorms and interviews.</li><li>Ask A3i across meeting history, with date-aware questions such as what was decided in March.</li><li>Upload split recordings in order to combine the parts into one meeting.</li></ul><div className={styles.exampleKey}><FileText size={21} aria-hidden="true" /><span>One conversation.<br /><strong>Three ways to move forward.</strong></span></div><a className={styles.textLink} href="#nextory-sample-panel">Explore the example <ArrowRight size={18} aria-hidden="true" /></a></NextoryReveal>
-        <NextoryReveal><NextoryPreview /></NextoryReveal>
-      </div>
-    </section>
 
     <section className={`${styles.section} ${styles.teamSection}`} aria-labelledby="nextory-team-title">
       <div className={`${styles.container} ${styles.teamGrid}`}>
