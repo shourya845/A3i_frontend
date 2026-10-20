@@ -1,0 +1,196 @@
+[
+  {
+    "id": "voice",
+    "name": "Voice Agent",
+    "title": "AI discovery & interviews, run for you",
+    "type": "Agent",
+    "problem": "The pain — discovery and screening calls eat the week",
+    "description": "The Voice Agent runs the discovery call or first-round interview — asks, listens, scores and books the next step.",
+    "steps": [
+      "Call connects",
+      "Asks & listens",
+      "Scores live",
+      "Summary + books"
+    ],
+    "integrations": [
+      "Phone calls",
+      "SMS follow-up",
+      "Calendar booking",
+      "ATS / CRM",
+      "Recordings"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-bub me\">“Walk me through your last role — what did you own day to day?”</div>\n                    <div class=\"m-bub\">“I managed a six-person service team — scheduling, inventory, and closing the books every night.”</div>\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span>Interview #42 — Ops Manager role</span><span class=\"m-tag\">Scored live</span></div>\n                      <div class=\"m-row\"><span>Experience fit 9/10  ·  Communication 8/10</span><strong>Fit 87%</strong></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> Summary sent to hiring manager · round 2 booked Thu 3:00 PM</span>\n                  </div>"
+  },
+  {
+    "id": "meeting",
+    "name": "Meeting Bot",
+    "title": "Every meeting, captured and owned",
+    "type": "Ant",
+    "problem": "The pain — decisions scattered across notebooks",
+    "description": "The Meeting Bot joins the call, logs each decision and assigns the action items — nothing waits for Friday memory.",
+    "steps": [
+      "Joins call",
+      "Captures notes",
+      "Logs decisions",
+      "Assigns actions"
+    ],
+    "integrations": [
+      "Zoom / Meet / Teams",
+      "Calendar",
+      "Email summaries",
+      "Task tools"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><strong>Vendor review — Tue 2:00 PM</strong><span class=\"m-tag\">Auto-notes</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-gavel m-ic\" aria-hidden=\"true\"></i> Decision: move to monthly billing</span><span>Owner: Sarah</span></div>\n                    </div>\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span><i class=\"fas fa-square-check m-check\" aria-hidden=\"true\"></i> Send revised contract — Sarah</span><span class=\"m-ok\">Done</span></div>\n                      <div class=\"m-row\"><span><i class=\"far fa-square m-ic\" aria-hidden=\"true\"></i> Update budget sheet — James</span><span>Due Fri</span></div>\n                      <div class=\"m-row\"><span><i class=\"far fa-square m-ic\" aria-hidden=\"true\"></i> Confirm rollout date — Priya</span><span>Due Mon</span></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> 3 action items tracked · reminders on</span>\n                  </div>"
+  },
+  {
+    "id": "schedule",
+    "name": "Scheduling Bot",
+    "title": "Bookings that book themselves",
+    "type": "Ant",
+    "problem": "The pain — five texts to book one slot",
+    "description": "Clients text a time; the Scheduling Bot checks availability, books the slot and confirms — no back-and-forth.",
+    "steps": [
+      "Client texts",
+      "Checks calendar",
+      "Books slot",
+      "Confirms"
+    ],
+    "integrations": [
+      "SMS",
+      "Phone",
+      "Google / Outlook Calendar",
+      "Reminders"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-cal\">\n                      <div class=\"m-day\">Mon<span class=\"m-slot\">10:00 Maria</span></div>\n                      <div class=\"m-day\">Tue<span class=\"m-slot\">1:30 Alex</span><span class=\"m-slot ms-new\">4:15 Dana</span></div>\n                      <div class=\"m-day\">Wed</div>\n                      <div class=\"m-day\">Thu<span class=\"m-slot\">11:00 Sam</span></div>\n                      <div class=\"m-day\">Fri</div>\n                    </div>\n                    <div class=\"m-bub\">“Any chance tomorrow afternoon?”</div>\n                    <div class=\"m-bub me\">“Booked you for 4:15 PM Tuesday — see you then!”</div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> 4 bookings this week · 0 double-bookings</span>\n                  </div>"
+  },
+  {
+    "id": "scan",
+    "name": "Smart Scan",
+    "title": "Documents that read themselves",
+    "type": "App",
+    "problem": "The pain — typing paper into spreadsheets",
+    "description": "Scan an invoice, a form, a deed — Smart Scan pulls out the fields and hands you structured data.",
+    "steps": [
+      "Upload / snap",
+      "AI reads",
+      "Extracts fields",
+      "Pushes to books"
+    ],
+    "integrations": [
+      "PDF",
+      "Photo / scanner",
+      "Excel / Sheets",
+      "Your books",
+      "Drive"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-doc\">\n                      <div class=\"m-doclines\"><span class=\"m-line\" style=\"width:65%\"></span><span class=\"m-line\" style=\"width:90%\"></span><span class=\"m-line\" style=\"width:78%\"></span><span class=\"m-line\" style=\"width:84%\"></span><span class=\"m-line\" style=\"width:52%\"></span></div>\n                      <div class=\"m-fields\">\n                        <div class=\"m-field\"><span>Vendor</span><strong>Metro Produce <i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></strong></div>\n                        <div class=\"m-field\"><span>Total</span><strong>$412.80 <i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></strong></div>\n                        <div class=\"m-field\"><span>Date</span><strong>Jul 12 <i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></strong></div>\n                        <div class=\"m-field\"><span>Category</span><strong>Food &amp; supplies <i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></strong></div>\n                      </div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> Extracted in 4 seconds · pushed to your books</span>\n                  </div>"
+  },
+  {
+    "id": "lang",
+    "name": "Multi-Language",
+    "title": "Every guest, understood",
+    "type": "App",
+    "problem": "The pain — guests speak five languages, you speak two",
+    "description": "Messages arrive in any language — Multi-Language answers guests in theirs and logs the task in yours.",
+    "steps": [
+      "Message arrives",
+      "Understands",
+      "Creates task",
+      "Replies in-language"
+    ],
+    "integrations": [
+      "SMS",
+      "WhatsApp",
+      "Email",
+      "Web chat"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-bub\">“Mehr Handtücher, bitte!” <span class=\"m-flag\">DE</span></div>\n                    <div class=\"m-trans\"><i class=\"fas fa-language\" aria-hidden=\"true\"></i> “More towels, please” — task created</div>\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span><i class=\"fas fa-broom m-ic\" aria-hidden=\"true\"></i> Housekeeping · Room 4 · extra towels</span><span class=\"m-tag\">Queued 7:00 AM</span></div>\n                    </div>\n                    <div class=\"m-bub me\">“Natürlich! Kommt sofort.”</div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> Guest answered in German · logged in English</span>\n                  </div>"
+  },
+  {
+    "id": "dataentry",
+    "name": "Automated Data Entry",
+    "title": "Data that enters itself",
+    "type": "App",
+    "problem": "The pain — copy-paste is a full-time job",
+    "description": "Forward a PDF, an email, a photo — clean rows land in your spreadsheet or system, typed by no one.",
+    "steps": [
+      "Forward doc",
+      "Parses rows",
+      "Validates",
+      "Lands in sheet"
+    ],
+    "integrations": [
+      "PDF",
+      "Email inbox",
+      "Photos",
+      "Excel / Sheets",
+      "Your CRM"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span><i class=\"fas fa-file-pdf m-ic\" aria-hidden=\"true\"></i> supplier-invoice.pdf</span><span class=\"m-tag\">Processed</span></div>\n                      <div class=\"m-row\"><span>Row 1 — Metro Produce · $412.80 · Jul 12</span><i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></div>\n                      <div class=\"m-row\"><span>Row 2 — Fresh Farms · $186.20 · Jul 12</span><i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></div>\n                      <div class=\"m-row\"><span>Row 3 — City Dairy · $94.60 · Jul 13</span><i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> 214 rows entered today · zero typos · zero copy-paste</span>\n                  </div>"
+  },
+  {
+    "id": "email",
+    "name": "Email Scan, Draft & Send",
+    "title": "Your inbox, triaged and answered",
+    "type": "Ant",
+    "problem": "The pain — 80 unread by lunch",
+    "description": "The Ant scans incoming mail, drafts replies in your voice and sends the routine ones — only what needs you reaches you.",
+    "steps": [
+      "Scans inbox",
+      "Drafts reply",
+      "Sends routine",
+      "Flags the rest"
+    ],
+    "integrations": [
+      "Gmail / Outlook",
+      "Attachments",
+      "Calendar",
+      "Your CRM"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span><i class=\"fas fa-envelope m-ic\" aria-hidden=\"true\"></i> Invoice query — Acme Corp</span><span class=\"m-ok\">Drafted · sent</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-envelope m-ic\" aria-hidden=\"true\"></i> Reschedule request — J. Chen</span><span class=\"m-ok\">Drafted · sent</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-envelope m-ic\" aria-hidden=\"true\"></i> Contract question — legal</span><span class=\"m-tag\">Flagged for you</span></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> 31 emails handled this morning · 4 flagged for review</span>\n                  </div>"
+  },
+  {
+    "id": "lead",
+    "name": "Lead Agent",
+    "title": "Leads found while you work",
+    "type": "Agent",
+    "problem": "The pain — finding the next client is a second job",
+    "description": "The Lead Agent scans the market for businesses that need you right now — scored, with outreach ready to go.",
+    "steps": [
+      "Scans market",
+      "Scores fit",
+      "Ranks leads",
+      "Drafts outreach"
+    ],
+    "integrations": [
+      "Web signals",
+      "LinkedIn",
+      "Job boards",
+      "Your CRM",
+      "Email outreach"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><span><i class=\"fas fa-building m-ic\" aria-hidden=\"true\"></i> TechNova Inc — hiring 12 roles this quarter</span><span class=\"m-tag\">Hot · 92</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-building m-ic\" aria-hidden=\"true\"></i> Baker &amp; Co — expanding operations</span><span>Warm · 78</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-building m-ic\" aria-hidden=\"true\"></i> Northside Clinic — opening 2nd location</span><span>Warm · 71</span></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> 18 qualified leads this week · outreach drafted for top 5</span>\n                  </div>"
+  },
+  {
+    "id": "personal",
+    "name": "Personal Agent",
+    "title": "A chief of staff in your pocket",
+    "type": "Agent",
+    "problem": "The pain — your day is one long interruption",
+    "description": "The Personal Agent checks the mail, answers the calls, keeps the calendar — and briefs you on what actually needs you.",
+    "steps": [
+      "Watches inbox/calls",
+      "Handles routine",
+      "Resolves conflicts",
+      "Briefs you"
+    ],
+    "integrations": [
+      "Email",
+      "Calls / voicemail",
+      "SMS",
+      "Calendar",
+      "Reminders"
+    ],
+    "example": "<div class=\"pain-shot\">\n                    <div class=\"m-card\">\n                      <div class=\"m-row\"><strong>Morning brief — 7:30 AM</strong><span class=\"m-tag\">Daily</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-envelope m-ic\" aria-hidden=\"true\"></i> 12 emails answered overnight</span><span>2 need you</span></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-phone m-ic\" aria-hidden=\"true\"></i> Supplier called — callback booked 2 PM</span><i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></div>\n                      <div class=\"m-row\"><span><i class=\"fas fa-calendar m-ic\" aria-hidden=\"true\"></i> 3 meetings today · 1 conflict resolved</span><i class=\"fas fa-circle-check m-check\" aria-hidden=\"true\"></i></div>\n                    </div>\n                    <span class=\"m-status\"><i class=\"fas fa-circle-check\" aria-hidden=\"true\"></i> You handled 5 things yesterday. It handled 41.</span>\n                  </div>"
+  }
+]

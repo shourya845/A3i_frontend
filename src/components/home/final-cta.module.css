@@ -1,0 +1,4 @@
+/* Override the global anchor inheritance on this white action only. */
+.demo {
+  color: #071d3a;
+}

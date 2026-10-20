@@ -1,0 +1,113 @@
+/* Change timings here for hover, menus, workflow selection, and chat. */
+:root {
+  --motion-fast: 180ms;
+  --motion-medium: 350ms;
+  --motion-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+/* Pointer feedback is also available to keyboard users. */
+.nav-link,
+.hero-actions a,
+.hero-actions button,
+.library-controls button {
+  transition: background var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+/* Only animate the newly selected workflow; its copy stays readable. */
+.workflow-detail {
+  animation: workflow-enter var(--motion-medium) var(--motion-ease);
+}
+.workflow-steps li {
+  animation: workflow-enter var(--motion-medium) var(--motion-ease) both;
+  animation-delay: calc(var(--step) * 110ms);
+}
+.workflow-steps li > svg {
+  animation: connection-enter var(--motion-medium) ease-out both;
+  animation-delay: calc(var(--step) * 110ms + 100ms);
+}
+.workflow-example {
+  animation: workflow-enter 450ms var(--motion-ease) 440ms both;
+}
+@keyframes workflow-enter {
+  from {
+    opacity: 0.65;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes connection-enter {
+  from {
+    opacity: 0.3;
+    transform: translateX(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* One compact logo launcher replaces the text pill. */
+.a31-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 62px;
+  height: 62px;
+  min-height: 0;
+  padding: 0;
+  margin-left: auto;
+  border: 1px solid #c3d6ef80;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: 0 7px 24px #00132a40;
+  transition: background var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+.a31-launcher img {
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.a31-launcher:hover,
+.a31-launcher.is-open {
+  background: #213c61;
+  box-shadow: 0 10px 28px #00132a55;
+}
+.a31-panel {
+  animation: chat-enter var(--motion-fast) var(--motion-ease);
+  transform-origin: bottom right;
+}
+@keyframes chat-enter {
+  from {
+    opacity: 0.6;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .a31-launcher {
+    width: 56px;
+    height: 56px;
+  }
+  .a31-launcher img {
+    width: 32px;
+    height: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .workflow-detail,
+  .workflow-steps li,
+  .workflow-steps li > svg,
+  .workflow-example,
+  .a31-panel {
+    animation: none;
+  }
+  .a31-launcher {
+    transition: none;
+  }
+}

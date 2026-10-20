@@ -1,0 +1,51 @@
+'use client';
+
+import { useState, useRef } from 'react';
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { FileText, Mic, Languages, Check, ArrowRight } from 'lucide-react';
+
+const examples = [
+  { label: 'Documents', icon: FileText, input: 'A document to review', process: 'Extract key points', output: 'A structured summary', review: 'Check the summary before sharing.' },
+  { label: 'Meetings', icon: Mic, input: 'A meeting conversation', process: 'Organize notes and actions', output: 'Notes and next steps', review: 'Confirm the actions with your team.' },
+  { label: 'Translation', icon: Languages, input: 'A message in another language', process: 'Translate the message', output: 'A translated draft', review: 'Review the meaning and tone.' },
+];
+
+export default function PlatformWorkflow() {
+  const [selected, setSelected] = useState(1);
+  const tabs = useRef<Array<HTMLButtonElement | null>>([]);
+  const reduced = useReducedMotion();
+  const example = examples[selected];
+  const Icon = example.icon;
+
+  return <div className="platform-workflow">
+    <div className="platform-workflow-heading"><span>From input to next step</span><small>Illustrative workflow</small></div>
+    <div className="platform-workflow-tabs" role="tablist" aria-label="Workflow illustration">
+      {examples.map((item, index) => <button key={item.label} type="button" role="tab"
+        ref={node => { tabs.current[index] = node; }}
+        id={`platform-tab-${index}`} aria-controls="platform-workflow-panel"
+        aria-selected={selected === index} tabIndex={selected === index ? 0 : -1}
+        onClick={() => setSelected(index)} onKeyDown={event => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? examples.length - 1
+            : (index + (event.key === 'ArrowRight' ? 1 : -1) + examples.length) % examples.length;
+          setSelected(next);
+          tabs.current[next]?.focus();
+        }}>{item.label}</button>)}
+    </div>
+    <div id="platform-workflow-panel" role="tabpanel" aria-labelledby={`platform-tab-${selected}`}>
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div key={example.label} initial={{ opacity: 0, y: reduced ? 0 : 8 }}
+          animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: reduced ? 0 : -8 }}
+          transition={{ duration: reduced ? 0 : 0.18 }}>
+          <ol className="platform-flow-steps">
+            <li><Icon size={22} aria-hidden="true" /><div><small>Input</small><strong>{example.input}</strong></div><ArrowRight size={18} aria-hidden="true" /></li>
+            <li><FileText size={22} aria-hidden="true" /><div><small>AI-assisted work</small><strong>{example.process}</strong></div><ArrowRight size={18} aria-hidden="true" /></li>
+            <li><Check size={22} aria-hidden="true" /><div><small>Output</small><strong>{example.output}</strong></div></li>
+          </ol>
+          <p className="platform-flow-review"><Check size={18} aria-hidden="true" /><span><strong>Human review</strong>{example.review}</span></p>
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  </div>;
+}

@@ -1,0 +1,94 @@
+.section:global(.workflow-section) {
+  padding: 36px 48px 64px;
+  background: #eaf1fa url('/images/backgrounds/why-a3i-contours.svg') right top / 560px auto no-repeat;
+  border-top: 1px solid #d9e5f2;
+}
+.intro {
+  margin: 0 0 28px;
+  max-width: 740px;
+  text-align: left;
+}
+.intro > p:first-child {
+  display: inline-flex;
+  padding: 7px 12px;
+  margin: 0 0 14px;
+  border: 1px solid #c5d7eb;
+  border-radius: 7px;
+  background: #dce9f8;
+  color: #163a63;
+  font-size: 12px;
+  font-weight: 600;
+}
+.intro h2 {
+  margin: 0;
+  color: #071d3a;
+  font: 700 clamp(32px, 3.3vw, 46px)/1.15 var(--display-font);
+  letter-spacing: -1.2px;
+}
+.intro > p:last-child {
+  max-width: 640px;
+  margin: 16px 0 0;
+  color: #536b8a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.section :global(.workflow-frame) {
+  background: #fff;
+  border: 1px solid #c6d7e9;
+  border-radius: 18px;
+  box-shadow: 0 12px 36px #173a620b;
+}
+.section :global(.workflow-toolbar) {
+  background: #102c4d;
+  color: #dce8f6;
+  border-bottom-color: #102c4d;
+}
+.section :global(.toolbar-mark) { border-color: #93b6dd; }
+.section :global(.workflow-tabs) {
+  background: #f0f5fc;
+  gap: 8px;
+}
+.section :global(.workflow-tabs button) {
+  background: #fff;
+  border-color: #dce6f1;
+  color: #264664;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+.section :global(.workflow-tabs button:hover) {
+  background: #e1ecf9;
+  border-color: #9eb9d8;
+}
+.section :global(.workflow-tabs button[aria-selected=true]) {
+  background: #163a63;
+  color: #fff;
+  border-color: #163a63;
+  box-shadow: 0 4px 12px #163a6320;
+}
+.section :global(.workflow-tabs button small) { color: #536578; }
+.section :global(.workflow-tabs button[aria-selected=true] small) { color: #d7e6f8; }
+.section :global(.workflow-tabs button:focus-visible) {
+  outline: 3px solid #789dca;
+  outline-offset: 2px;
+}
+.section :global(.workflow-detail) { animation: none; }
+.section :global(.workflow-problem) {
+  color: #315780;
+  border-left: 3px solid #9dbbdf;
+  padding-left: 12px;
+}
+.section :global(.workflow-example) {
+  border-color: #d3e0ef;
+  background: #f5f8fd;
+}
+@media (max-width: 1099px) {
+  .section:global(.workflow-section) { padding-inline: 28px; }
+}
+@media (max-width: 700px) {
+  .section:global(.workflow-section) { padding: 28px 20px 48px; background-size: 320px auto; }
+  .intro { margin-bottom: 24px; }
+  .intro > p:last-child { font-size: 16px; }
+  .section :global(.workflow-toolbar) { padding: 12px 16px; gap: 9px; font-size: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .section :global(.workflow-tabs button) { transition: none; }
+}

@@ -1,0 +1,71 @@
+.section {
+  background-color: #e8f0fa;
+  background-image:
+    url('/images/backgrounds/why-a3i-contours.svg'),
+    linear-gradient(90deg, #e8f0faf5 0%, #e8f0fad4 40%, #e8f0fa99 100%),
+    url('/reference/assets/band-why.webp');
+  background-position: right top, center, center;
+  background-size: min(48vw, 600px) auto, cover, cover;
+  background-repeat: no-repeat;
+}
+.benefit {
+  background: #dce9f8;
+  border-color: #bdcfe5;
+}
+.benefit:last-child {
+  background: #edf3fb;
+}
+.icon {
+  background: #c1d6ee;
+  color: #12365d;
+}
+.description {
+  color: #354f6e;
+}
+.benefit:first-child {
+  background: #0b528c;
+  border-color: #246aa1;
+  color: #fff;
+}
+.benefit:first-child .icon {
+  background: #2d70a3;
+  color: #fff;
+}
+.benefit:first-child .description {
+  color: #e1effb;
+}
+.diagram {
+  background: #256596;
+  border-color: #5c8fb6;
+  color: #fff;
+}
+.model {
+  background: #f1f6fd;
+  color: #102c4d;
+}
+.taskDot {
+  background: #c5e5ff;
+}
+.industryLink {
+  background: #e1ecf9;
+  color: #123459;
+  border-color: #b9cee5;
+  box-shadow: 0 2px 4px #163a6306;
+  transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, translate 180ms ease;
+}
+.industryLink:is(:hover, :focus-visible) {
+  background: #163a63;
+  border-color: #163a63;
+  color: white;
+  translate: 0 -2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .industryLink { transition: none; }
+  .industryLink:is(:hover, :focus-visible) { translate: none; }
+}
+@media (max-width: 700px) {
+  .section {
+    background-position: right top, center, 65% center;
+    background-size: 320px auto, cover, cover;
+  }
+}

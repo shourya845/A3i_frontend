@@ -1,0 +1,61 @@
+/* Compact homepage footer; other pages retain the existing footer. */
+.compact {
+  background: #fff;
+  color: #071d3a;
+  padding: 48px 48px 22px;
+}
+.compact :global(.footer-top) {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 64px;
+  padding-bottom: 32px;
+}
+.compact :global(.footer-columns) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.compact :global(.footer-identity .brand) {
+  font-size: 36px;
+  letter-spacing: -1.3px;
+}
+.compact :global(.brand-symbol),
+.compact :global(.brand-symbol img) {
+  width: 52px;
+  height: 52px;
+}
+.compact :global(.footer-identity > p) {
+  max-width: 36ch;
+  font-size: 16px;
+  line-height: 1.65;
+  margin-block: 18px 12px;
+}
+.compact :global(.footer-columns h2) {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+.compact :global(.footer-columns a) {
+  min-height: 34px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.compact :global(.footer-columns a:hover) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.compact :global(.footer-bottom) {
+  padding-top: 18px;
+  font-size: 12px;
+}
+@media (max-width: 900px) {
+  .compact { padding-inline: 28px; }
+  .compact :global(.footer-top) { grid-template-columns: 1fr; gap: 32px; }
+}
+@media (max-width: 600px) {
+  .compact { padding: 36px 20px 20px; }
+  .compact :global(.footer-columns) { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .compact :global(.footer-columns a) { min-height: 44px; }
+  .compact :global(.footer-identity .brand) { font-size: 30px; }
+  .compact :global(.brand-symbol),
+  .compact :global(.brand-symbol img) { width: 44px; height: 44px; }
+}

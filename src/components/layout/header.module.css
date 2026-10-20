@@ -1,0 +1,131 @@
+.header {
+  --nav-surface: #084d80;
+  padding: 12px 24px;
+  background: var(--navy);
+  color: #fff;
+  box-shadow: none;
+}
+
+.header :global(.nav-shell) {
+  max-width: 1320px;
+  min-height: 72px;
+  padding: 10px 20px;
+  gap: 24px;
+  border-radius: 18px;
+  background: var(--nav-surface);
+  box-shadow: 0 8px 24px #0014261a;
+}
+
+.header :global(.brand) {
+  font-size: 25px;
+  gap: 10px;
+}
+
+.header :global(.brand-symbol),
+.header :global(.brand-symbol img) {
+  width: 38px;
+  height: 38px;
+}
+
+.header :global(.brand-symbol img) {
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
+.header :global(.desktop-links) {
+  margin-left: 0;
+  gap: 4px;
+}
+
+.header :global(.nav-link),
+.header :global(.responsible),
+.header :global(.login) {
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header :global(.nav-link) {
+  padding: 13px 12px;
+}
+
+.header :global(.nav-link:is(:hover, :focus-visible, .is-open)),
+.header :global(.responsible:hover),
+.header :global(.login:hover) {
+  color: #fff;
+  background: #21638f;
+}
+
+.header :global(.desktop-actions) {
+  gap: 18px;
+}
+
+.header :global(.responsible) {
+  border: 0;
+  padding: 12px 8px;
+}
+
+.header :global(.login) {
+  padding: 12px 8px;
+}
+
+.header :global(.start-button) {
+  background: #e1f3ff;
+  color: #0b223c;
+  padding: 14px 20px;
+}
+
+.header :global(.start-button:hover) {
+  background: #fff;
+}
+
+.header :global(a:focus-visible),
+.header :global(button:focus-visible) {
+  outline: 2px solid #bce8ff;
+  outline-offset: 3px;
+}
+
+.header :global(.desktop-panels) {
+  padding: 0 24px;
+}
+
+.header :global(.dropdown-panel) {
+  margin-top: 4px;
+}
+
+.header :global(.dropdown-panel button:focus-visible) {
+  outline-color: #084d80;
+}
+
+@media (min-width: 1100px) and (max-width: 1190px) {
+  .header :global(.nav-shell) { gap: 12px; }
+  .header :global(.nav-link) { padding-inline: 9px; }
+  .header :global(.desktop-actions) { gap: 8px; }
+}
+
+@media (max-width: 1099px) {
+  .header { padding: 10px 16px; }
+  .header :global(.nav-shell) {
+    min-height: 64px;
+    padding: 8px 14px;
+    border-radius: 14px;
+  }
+  .header :global(.menu-toggle) {
+    color: #fff;
+    background: #21638f;
+    border: 0;
+  }
+  .header :global(.mobile-panel) {
+    left: 16px;
+    right: 16px;
+    background: var(--nav-surface);
+    color: #fff;
+    border-radius: 14px;
+    max-height: calc(100dvh - 96px);
+  }
+  .header :global(.mobile-section > div) {
+    background: #fff;
+    color: var(--ink);
+    border-radius: 10px;
+    padding-inline: 12px;
+  }
+}
